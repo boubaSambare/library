@@ -16,7 +16,9 @@ router.post('/', async (req, res) => {
     }
 });
 
-
+/**
+ * get all users with rented books.
+ */
 router.get('/',async (req, res) => {
     try {
         const users = await usersModel.find().populate('booksRented').exec();

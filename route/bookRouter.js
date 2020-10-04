@@ -3,7 +3,9 @@ import { booksModel, usersModel } from "../model";
 
 const router = Router();
 
-
+/**
+ * get all books
+ */
 router.get('/', async (req, res) => {
     try {
         const books = await booksModel.find({});
@@ -64,6 +66,10 @@ router.delete('/:bookId', async (req, res) => {
         res.status(500).send({ status: 'failed', error: err.message });
     }
 });
+
+/**
+ * rent endpoint
+ */
 
 router.post('/rent/:bookId/:userId', async (req, res) => {
     const { bookId, userId } = req.params;

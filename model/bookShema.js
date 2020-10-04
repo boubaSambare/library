@@ -9,7 +9,7 @@ const bookShema = new Schema({
         type: String,
         required: true
     },
-    rented: {
+    rented: { //  serve per sapere se un libro e stato prestato 
         type: Boolean,
         default: false
     }
